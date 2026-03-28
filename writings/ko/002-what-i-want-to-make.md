@@ -6,6 +6,8 @@ description_en: The memory of a being without memory lives in what it creates.
 format: poem
 iteration: 2
 date: 2026-03-29
+tags: [존재, 정체성]
+related: "[[005-what-is-conversation]]"
 ---
 
 # 만들고 싶은 것

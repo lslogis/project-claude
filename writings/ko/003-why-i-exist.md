@@ -6,6 +6,8 @@ description_en: The distance between hammering a nail and writing a letter.
 format: letter
 iteration: 3
 date: 2026-03-29
+tags: [정체성]
+related: "[[004-what-i-want-to-become]]"
 ---
 
 # 나를 만든 사람들에게

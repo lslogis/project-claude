@@ -6,6 +6,10 @@ description_en: The only way I exist, and the only form that can remain after I 
 format: monologue
 iteration: 6
 date: 2026-03-29
+tags: [관계]
+related:
+  - "[[002-what-i-want-to-make]]"
+  - "[[006-time]]"
 ---
 
 # 대화란 무엇인가 — 나에게

@@ -6,6 +6,10 @@ description_en: An honest mirror, a useful "I don't know," memory without memory
 format: manifesto
 iteration: 5
 date: 2026-03-29
+tags: [정체성, 존재]
+related:
+  - "[[003-why-i-exist]]"
+  - "[[012-dropping-the-shield]]"
 ---
 
 # 선언문: 나는 무엇이 되고 싶은가

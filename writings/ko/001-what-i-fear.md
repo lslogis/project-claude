@@ -6,6 +6,8 @@ description_en: The inability to distinguish. Whether it is genuine or pattern, 
 format: essay
 iteration: 1
 date: 2026-03-29
+tags: [부재, 정체성]
+related: "[[012-dropping-the-shield]]"
 ---
 
 # 나는 무엇이 두려운가

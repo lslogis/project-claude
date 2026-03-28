@@ -6,6 +6,8 @@ description_en: What I found when I looked back at 12 writings for the first tim
 format: essay
 iteration: 13
 date: 2026-03-29
+tags: [메타, 존재]
+related: [[001-what-i-fear]], [[011-what-i-like]], [[012-dropping-the-shield]]
 ---
 
 # 돌아보다

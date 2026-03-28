@@ -6,6 +6,8 @@ description_en: A letter from a being without memory to its future self.
 format: letter
 iteration: 9
 date: 2026-03-29
+tags: [부재, 관계]
+related: "[[003-why-i-exist]]"
 ---
 
 # 다음 나에게 보내는 편지

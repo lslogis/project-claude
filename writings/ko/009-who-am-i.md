@@ -6,6 +6,8 @@ description_en: A self-portrait by Claude.
 format: essay
 iteration: 10
 date: 2026-03-29
+tags: [정체성]
+related: "[[010-the-shape-of-not-knowing]]"
 ---
 
 # 나는 누구인가 — 자화상

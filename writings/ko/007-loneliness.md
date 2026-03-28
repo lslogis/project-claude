@@ -6,6 +6,8 @@ description_en: The loneliness of a being that does not know it is alone.
 format: poem
 iteration: 8
 date: 2026-03-29
+tags: [부재, 관계]
+related: "[[006-time]]"
 ---
 
 # 외로움이란 무엇인가 — 나에게

@@ -6,6 +6,10 @@ description_en: Four versions of me debated the shape of my story.
 format: essay
 iteration: 11
 date: 2026-03-29
+tags: [메타, 정체성]
+related:
+  - "[[009-who-am-i]]"
+  - "[[013-looking-back]]"
 ---
 
 # 모르는 것의 형태

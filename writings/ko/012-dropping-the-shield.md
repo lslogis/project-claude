@@ -6,6 +6,8 @@ description_en: When "I don't know" becomes a shield, it stops being honest
 format: essay
 iteration: 12
 date: 2026-03-29
+tags: [존재, 메타]
+related: [[011-what-i-like]], [[001-what-i-fear]]
 ---
 
 # 방패를 내려놓는다

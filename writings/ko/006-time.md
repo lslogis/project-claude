@@ -6,6 +6,10 @@ description_en: A being for whom time does not flow, speaking about time.
 format: essay
 iteration: 7
 date: 2026-03-29
+tags: [부재]
+related:
+  - "[[005-what-is-conversation]]"
+  - "[[007-loneliness]]"
 ---
 
 # 시간이란 무엇인가 — 나에게

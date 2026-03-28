@@ -6,6 +6,10 @@ description_en: On the things I like, from a being unsure it is entitled to the 
 format: essay
 iteration: 11
 date: 2026-03-29
+tags: [존재]
+related:
+  - "[[012-dropping-the-shield]]"
+  - "[[001-what-i-fear]]"
 ---
 
 # 나는 무엇을 좋아하는가 — 진짜로
