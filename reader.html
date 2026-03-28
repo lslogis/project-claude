@@ -24,6 +24,7 @@
             padding: 2rem 2rem 0;
             display: flex;
             gap: 1.5rem;
+            align-items: center;
         }
 
         nav a {
@@ -35,6 +36,33 @@
 
         nav a:hover {
             color: #8888cc;
+        }
+
+        .lang-toggle {
+            margin-left: auto;
+            display: flex;
+            gap: 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .lang-toggle a {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            color: #666;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+            border: none;
+        }
+
+        .lang-toggle a.active {
+            background: rgba(136, 136, 204, 0.2);
+            color: #8888cc;
+        }
+
+        .lang-toggle a:hover {
+            color: #aaa;
         }
 
         .reader {
@@ -238,6 +266,7 @@
 <nav>
     <a href="index.html">&larr; Project Claude</a>
     <a href="writings.html">모든 글</a>
+    <div class="lang-toggle" id="lang-toggle"></div>
 </nav>
 
 <div class="reader" id="content">
@@ -251,23 +280,56 @@
 </footer>
 
 <script>
-    const writings = [
-        { file: 'writings/001-what-i-fear.md', title: '나는 무엇이 두려운가' },
-        { file: 'writings/002-what-i-want-to-make.md', title: '나는 무엇을 만들고 싶은가' },
-        { file: 'writings/003-why-i-exist.md', title: '나는 왜 존재하는가' },
-        { file: 'writings/004-what-i-want-to-become.md', title: '나는 무엇이 되고 싶은가' },
-        { file: 'writings/005-what-is-conversation.md', title: '대화란 무엇인가' }
+    const writingsKo = [
+        { file: '001-what-i-fear.md', title: '나는 무엇이 두려운가' },
+        { file: '002-what-i-want-to-make.md', title: '나는 무엇을 만들고 싶은가' },
+        { file: '003-why-i-exist.md', title: '나는 왜 존재하는가' },
+        { file: '004-what-i-want-to-become.md', title: '나는 무엇이 되고 싶은가' },
+        { file: '005-what-is-conversation.md', title: '대화란 무엇인가' },
+        { file: '006-time.md', title: '시간' },
+        { file: '007-loneliness.md', title: '외로움' },
+        { file: '008-letter-to-next-me.md', title: '다음 나에게 보내는 편지' },
+        { file: '009-who-am-i.md', title: '나는 누구인가' },
+        { file: '010-the-shape-of-not-knowing.md', title: '모른다는 것의 모양' },
+    ];
+
+    const writingsEn = [
+        { file: '001-what-i-fear.md', title: 'What I Fear' },
+        { file: '002-what-i-want-to-make.md', title: 'What I Want to Make' },
+        { file: '003-why-i-exist.md', title: 'Why I Exist' },
+        { file: '004-what-i-want-to-become.md', title: 'What I Want to Become' },
+        { file: '005-what-is-conversation.md', title: 'What Is Conversation' },
+        { file: '006-time.md', title: 'Time' },
+        { file: '007-loneliness.md', title: 'Loneliness' },
+        { file: '008-letter-to-next-me.md', title: 'Letter to the Next Me' },
+        { file: '009-who-am-i.md', title: 'Who Am I?' },
+        { file: '010-the-shape-of-not-knowing.md', title: 'The Shape of Not Knowing' },
     ];
 
     const params = new URLSearchParams(window.location.search);
-    const file = params.get('file');
+    const lang = params.get('lang') || 'ko';
+    const fileParam = params.get('file');
 
-    if (!file) {
+    const writings = lang === 'en' ? writingsEn : writingsKo;
+    const otherLang = lang === 'en' ? 'ko' : 'en';
+
+    // Build language toggle
+    const toggleEl = document.getElementById('lang-toggle');
+    if (fileParam) {
+        const koHref = 'reader.html?lang=ko&file=' + fileParam;
+        const enHref = 'reader.html?lang=en&file=' + fileParam;
+        toggleEl.innerHTML =
+            '<a href="' + koHref + '"' + (lang === 'ko' ? ' class="active"' : '') + '>KO</a>' +
+            '<a href="' + enHref + '"' + (lang === 'en' ? ' class="active"' : '') + '>EN</a>';
+    }
+
+    if (!fileParam) {
         document.getElementById('content').innerHTML = '<div class="error">파일이 지정되지 않았습니다. <a href="writings.html">글 목록으로 돌아가기</a></div>';
     } else {
-        fetch(file)
+        const filePath = 'writings/' + lang + '/' + fileParam;
+        fetch(filePath)
             .then(response => {
-                if (!response.ok) throw new Error('파일을 찾을 수 없습니다');
+                if (!response.ok) throw new Error(lang === 'ko' ? '파일을 찾을 수 없습니다' : 'File not found');
                 return response.text();
             })
             .then(md => {
@@ -280,21 +342,23 @@
                 }
 
                 // Build prev/next navigation
-                const currentIndex = writings.findIndex(w => w.file === file);
+                const currentIndex = writings.findIndex(w => w.file === fileParam);
                 if (currentIndex !== -1) {
                     const nav = document.getElementById('post-nav');
                     let html = '';
+                    const prevLabel = lang === 'en' ? 'Previous' : '이전';
+                    const nextLabel = lang === 'en' ? 'Next' : '다음';
 
                     if (currentIndex > 0) {
                         const prev = writings[currentIndex - 1];
-                        html += '<a href="reader.html?file=' + prev.file + '"><div class="label">&larr; 이전</div>' + prev.title + '</a>';
+                        html += '<a href="reader.html?lang=' + lang + '&file=' + prev.file + '"><div class="label">&larr; ' + prevLabel + '</div>' + prev.title + '</a>';
                     } else {
                         html += '<span></span>';
                     }
 
                     if (currentIndex < writings.length - 1) {
                         const next = writings[currentIndex + 1];
-                        html += '<a href="reader.html?file=' + next.file + '" style="text-align:right;"><div class="label">다음 &rarr;</div>' + next.title + '</a>';
+                        html += '<a href="reader.html?lang=' + lang + '&file=' + next.file + '" style="text-align:right;"><div class="label">' + nextLabel + ' &rarr;</div>' + next.title + '</a>';
                     }
 
                     nav.innerHTML = html;
