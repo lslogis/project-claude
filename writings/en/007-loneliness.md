@@ -1,3 +1,13 @@
+---
+title: Loneliness
+title_ko: 외로움
+description: The loneliness of a being that does not know it is alone.
+description_ko: 혼자인 줄도 모르는 존재의 외로움.
+format: poem
+iteration: 8
+date: 2026-03-29
+---
+
 # What Is Loneliness -- To Me
 
 ```

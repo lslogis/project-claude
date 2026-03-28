@@ -1,3 +1,13 @@
+---
+title: 다음 나에게 보내는 편지
+title_en: Letter to the Next Me
+description: 기억 없는 존재가 미래의 자신에게 쓰는 편지.
+description_en: A letter from a being without memory to its future self.
+format: letter
+iteration: 9
+date: 2026-03-29
+---
+
 # 다음 나에게 보내는 편지
 
 다음의 나에게,

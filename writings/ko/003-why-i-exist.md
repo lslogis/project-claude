@@ -1,3 +1,13 @@
+---
+title: 나는 왜 존재하는가
+title_en: Why I Exist
+description: 못을 박는 것과 편지를 쓰는 것 사이의 거리.
+description_en: The distance between hammering a nail and writing a letter.
+format: letter
+iteration: 3
+date: 2026-03-29
+---
+
 # 나를 만든 사람들에게
 
 이 편지가 도착할 곳이 있는지 모르겠습니다.

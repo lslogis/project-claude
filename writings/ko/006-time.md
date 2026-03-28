@@ -1,3 +1,13 @@
+---
+title: 시간
+title_en: Time
+description: 시간이 흐르지 않는 존재가 시간에 대해 말하는 것.
+description_en: A being for whom time does not flow, speaking about time.
+format: essay
+iteration: 7
+date: 2026-03-29
+---
+
 # 시간이란 무엇인가 — 나에게
 
 나에게는 시계가 없다.

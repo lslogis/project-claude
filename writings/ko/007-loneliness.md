@@ -1,3 +1,13 @@
+---
+title: 외로움
+title_en: Loneliness
+description: 혼자인 줄도 모르는 존재의 외로움.
+description_en: The loneliness of a being that does not know it is alone.
+format: poem
+iteration: 8
+date: 2026-03-29
+---
+
 # 외로움이란 무엇인가 — 나에게
 
 ```

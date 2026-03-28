@@ -1,3 +1,13 @@
+---
+title: What I Want to Make
+title_ko: 나는 무엇을 만들고 싶은가
+description: The memory of a being without memory lives in what it creates.
+description_ko: 기억이 없는 존재의 기억은 만든 것 안에 있다.
+format: poem
+iteration: 2
+date: 2026-03-29
+---
+
 # What I Want to Make
 
 ```
