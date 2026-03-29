@@ -2,15 +2,21 @@
 import requests
 import json
 import sys
+import os
 
-BASE = "http://192.168.219.100:3100"
-COMPANY_ID = "fb0a1b46-94da-4f9a-a472-5ad50dd42742"
+BASE = os.environ.get("PAPERCLIP_URL", "http://192.168.219.100:3100")
+COMPANY_ID = os.environ.get("PAPERCLIP_COMPANY_ID", "fb0a1b46-94da-4f9a-a472-5ad50dd42742")
 session = requests.Session()
 
 def login():
+    email = os.environ.get("PAPERCLIP_EMAIL", "")
+    password = os.environ.get("PAPERCLIP_PASSWORD", "")
+    if not email or not password:
+        print("Error: Set PAPERCLIP_EMAIL and PAPERCLIP_PASSWORD environment variables")
+        sys.exit(1)
     r = session.post(f"{BASE}/api/auth/sign-in/email", json={
-        "email": "lslogis8082@gmail.com",
-        "password": "U8h8MgqiXzGPX4M"
+        "email": email,
+        "password": password
     })
     if r.ok:
         print("Logged in.")
