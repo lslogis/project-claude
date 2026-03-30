@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FILE_PATH=$(cat | jq -r '.tool_input.file_path // empty') && [ -n \"$FILE_PATH\" ] && bash d:/claude_com/project-claude/.claude/lint-writing.sh \"$FILE_PATH\" || true"
+          }
+        ]
+      }
+    ]
+  }
+}
